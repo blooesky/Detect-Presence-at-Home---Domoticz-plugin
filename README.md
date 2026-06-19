@@ -47,7 +47,7 @@ Add a new Hardware device.
 ### Type
 
 ```text
-Detect Presence ARP
+Detect Presence at home
 ```
 
 ### Phones
@@ -55,7 +55,7 @@ Detect Presence ARP
 Example:
 
 ```text
-Geo=AA:BB:CC:DD:EE:FF, Cristina=11:22:33:44:55:66
+Andy=AA:BB:CC:DD:EE:FF, Cristina=11:22:33:44:55:66
 ```
 
 ### Poll interval seconds
@@ -93,8 +93,8 @@ wlan0
 Example:
 
 ```text
-Geo                    Switch
-Geo Last Seen          Text
+Andy                   Switch
+Andy Last Seen          Text
 
 Cristina               Switch
 Cristina Last Seen     Text
@@ -108,6 +108,3 @@ Presence Status        Text
 
 For best results, disable **Random/Private MAC** on phones connected to your home Wi-Fi network.
 
-## License
-
-MIT License.

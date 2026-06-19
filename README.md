@@ -17,6 +17,7 @@ Installation
 Clone the repository into the Domoticz plugins folder:
 
 cd /home/pi/domoticz/plugins
+
 git clone https://github.com/YOUR_USER/detect_presence_arp.git
 
 Optional:

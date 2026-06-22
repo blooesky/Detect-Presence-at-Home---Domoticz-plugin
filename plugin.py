@@ -1,7 +1,7 @@
 # Presence at home ARP Detect - Domoticz Plugin
 
 """
-<plugin key="detect_presence_arp" name="Detect Presence At Home - ARP" author="4D" version="1.0.2">
+<plugin key="detect_presence_arp" name="Detect Presence At Home - ARP" author="4D" version="1.0.2" wikilink="https://github.com/blooesky/Detect-Presence-at-Home---Domoticz-plugin">
     <params>
         <param field="Mode1" label="Phones" width="600px" required="true" default="Andy=AA:BB:CC:DD:EE:FF, Cristina=11:22:33:44:55:66"/>
         <param field="Mode2" label="Poll interval seconds" width="100px" required="true" default="20"/>

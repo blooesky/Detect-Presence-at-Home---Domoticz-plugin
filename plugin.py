@@ -1,9 +1,9 @@
 # Presence at home ARP Detect - Domoticz Plugin
 
 """
-<plugin key="detect_presence_arp" name="Detect Presence At Home - ARP" author="BS" version="1.0.2">
+<plugin key="detect_presence_arp" name="Detect Presence At Home - ARP" author="4D" version="1.0.2">
     <params>
-        <param field="Mode1" label="Phones" width="600px" required="true" default="Geo=AA:BB:CC:DD:EE:FF, Cristina=11:22:33:44:55:66"/>
+        <param field="Mode1" label="Phones" width="600px" required="true" default="Andy=AA:BB:CC:DD:EE:FF, Cristina=11:22:33:44:55:66"/>
         <param field="Mode2" label="Poll interval seconds" width="100px" required="true" default="20"/>
         <param field="Mode3" label="Away timeout seconds" width="120px" required="true" default="120"/>
         <param field="Mode4" label="Network interface" width="120px">
@@ -243,9 +243,9 @@ class PresenceARP:
             )
 
         if anyone:
-            status = "Acasa: " + ", ".join(present_names)
+            status = "Home: " + ", ".join(present_names)
         else:
-            status = "Nimeni acasa"
+            status = "Nobody home"
 
         if UNIT_STATUS in Devices:
             Devices[UNIT_STATUS].Update(

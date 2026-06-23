@@ -5,7 +5,7 @@
     <params>
         <param field="Mode1" label="Phones" width="600px" required="true" default="Andy=AA:BB:CC:DD:EE:FF, Cristina=11:22:33:44:55:66"/>
         <param field="Mode2" label="Poll interval seconds" width="100px" required="true" default="20"/>
-        <param field="Mode3" label="Away timeout seconds" width="120px" required="true" default="120"/>
+        <param field="Mode3" label="Away timeout seconds" width="120px" required="true" default="140"/>
         <param field="Mode4" label="Network interface" width="120px">
             <options>
                 <option label="Auto" value="" default="true"/>
@@ -159,8 +159,26 @@ class PresenceARP:
                     TypeName="Text"
                 ).Create()
 
-            self.last_seen_text[phone["mac"]] = "Never"
-            self.last_seen_ts[phone["mac"]] = 0
+            existing_text = "Never"
+            existing_ts = 0
+
+            if seen_unit in Devices:
+                try:
+                    existing_text = Devices[seen_unit].sValue
+
+                    if existing_text and existing_text != "Never":
+                        dt = datetime.strptime(existing_text, "%Y-%m-%d %H:%M:%S")
+                        existing_ts = time.mktime(dt.timetuple())
+                    else:
+                        existing_text = "Never"
+                        existing_ts = 0
+
+                except Exception:
+                    existing_text = "Never"
+                    existing_ts = 0
+
+            self.last_seen_text[phone["mac"]] = existing_text
+            self.last_seen_ts[phone["mac"]] = existing_ts
 
     def onHeartbeat(self):
         now = time.time()
